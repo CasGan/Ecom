@@ -5,6 +5,8 @@ import { useCartStore } from "../stores/useCartStore";
 const GiftCouponCard = () => {
   const [userInputCode, setUserInputCode] = useState("");
   const { coupon, isCouponApplied } = useCartStore();
+
+  
   const handleApplyCoupon = () => {
     console.log(userInputCode);
   };
@@ -43,7 +45,7 @@ const GiftCouponCard = () => {
           className="flex w-full items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={{ handleApplyCoupon }}
+          onClick={handleApplyCoupon}
         >
           Apply Code
         </motion.button>
@@ -51,7 +53,7 @@ const GiftCouponCard = () => {
       {isCouponApplied && coupon && (
         <div className="mt-4">
           <h3 className="text-lg font-medium text-gray-300">Applied Coupon</h3>
-          <p className="mt-2 text-sm text-gray-400">
+          <p className="mt-2 text-sm text-gray-400">4 od
             {coupon.code} - {coupon.discountPercentage}% off
           </p>
 
