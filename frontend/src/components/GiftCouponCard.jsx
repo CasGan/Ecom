@@ -17,7 +17,6 @@ const GiftCouponCard = () => {
 
   const handleApplyCoupon = () => {
     if(!userInputCode) return;
-
     applyCoupon(userInputCode);
   };
 
